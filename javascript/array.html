@@ -1,0 +1,50 @@
+
+Vaishakh Pillai
+3:50 PM (7 minutes ago)
+to Sweaba, me
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Push and Pop Example</title>
+</head>
+<body>
+
+  <button onclick="pushItem()">Push Item</button>
+  <button onclick="popItem()">Pop Item</button>
+  
+  <ul id="itemsList"></ul>
+
+  <script>
+    var items = []; // Empty array to store items
+
+    function pushItem() {
+      var newItem = prompt("Enter an item to push:"); // Prompt user for item
+      items.push(newItem); // Push the item to the array
+      displayItems(); // Display the updated items
+    }
+
+    function popItem() {
+      if (items.length === 0) {
+        alert("No items to pop.");
+      } else {
+        var poppedItem = items.pop(); // Pop the last item from the array
+        alert("Popped item: " + poppedItem);
+        displayItems(); // Display the updated items
+      }
+    }
+
+    function displayItems() {
+      var itemsList = document.getElementById("itemsList");
+      itemsList.innerHTML = ""; // Clear the list
+
+      for (var i = 0; i < items.length; i++) {
+        var listItem = document.createElement("li");
+        listItem.appendChild(document.createTextNode(items[i]));
+        itemsList.appendChild(listItem);
+      }
+    }
+  </script>
+
+</body>
+</html>
