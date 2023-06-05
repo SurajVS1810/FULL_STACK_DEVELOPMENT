@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Are you a web developer</h1>
+
+
+  <input type="checkbox" id="myCheck1" name="vehicle1" value="Yes, Iam a web developer">
+  <label for="myCheck1">YES</label><br>
+  <input type="checkbox" id="myCheck2" name="vehicle2" value="No, Iam not a web developer">
+  <label for="myCheck2"> NO</label><br><br>
+  <button onclick="checkCheckbox()">Submit</button><br>
+  <h4 style="color:green" id="result"></h4>
+  <h4 style="color:red" id="error"></h4>
+
+  <script>
+    function checkCheckbox(){
+        var yes=document.getElementById("myCheck1");
+        var no=document.getElementById("myCheck2");
+        if(yes.checked ==true && no.checked ==true){
+            return document.getElementById("error").innerHTML="please mark only one checkbox";
+
+        }
+        else if(yes.checked==true){
+            var y=document.getElementById("myCheck1").value;
+            return document.getElementById("result").innerHTML=y;
+        }
+        else if(no.checked==true){
+            var n=document.getElementById("myCheck2").value;
+            return document.getElementById("result").innerHTML=n;
+        }
+        else{
+            return document.getElementById("error").innerHTML="please mark any one checkbox";
+        }
+    }
+  </script>
+
+</body>
+</html>
