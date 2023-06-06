@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <body>
+            <ul>
+                {% block content %}
+                  {% for x in products %}
+                    <li>{{x.name}},{{x.price}},{{x.stock}}</li>
+                  {% endfor %}
+                {% endblock %}
+            </ul>
+        </body>
+    </head>
+</html>
